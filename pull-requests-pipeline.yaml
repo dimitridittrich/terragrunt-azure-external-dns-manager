@@ -1,0 +1,9 @@
+resources:
+  repositories:
+    - repository: terraform-shared
+      type: git
+      name: terraform-shared
+      ref: master
+trigger: none
+stages:
+  - template: pipeline/brewzone/pull-requests/stage.yaml@terraform-shared

@@ -1,0 +1,13 @@
+# File managed by terraform. DO NOT EDIT!
+brewzone:
+  name: "subscription-name"
+project:
+  name: "external-dns"  
+squad:
+  name: "dimitri"
+dev_owner:
+  name: "dimitri-dittrich"
+  email: "dimitri.dittrich@outlook.com"
+tech_owner:
+  name: "dimitri-dittrich"
+  email: "dimitri.dittrich@outlook.com"

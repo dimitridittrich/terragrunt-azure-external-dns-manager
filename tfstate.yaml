@@ -1,0 +1,5 @@
+# File managed by terraform. DO NOT EDIT!
+azurerm:
+  storage_account_name:  "stg-account-name"
+  resource_group_name: "rg-name"
+  container_name: "container-name"

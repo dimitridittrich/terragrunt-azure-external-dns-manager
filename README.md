@@ -1,2 +1,18 @@
-# terragrunt-azure-external-dns-manager
-Terragrunt that consumes the modules from my repository named "terraform-azure-external-dns-manager ", organizing the entries of the records in separate yaml's.
+# Getting KV name by env
+
+## Requirements
+- jq
+```
+sudo apt-get install jq
+```
+- az-cli
+```
+
+```
+
+## Getting by product name and env
+``` az keyvault list  --resource-group <core_rg_name> --subscription <subscription_name> | jq --arg product "<product_name>" --arg env "<env>" '.[] | select(.tags.ProductName==$product and .tags.Environment == $env) | .name ' ```
+
+Change <env> by desired environment (dev, stv, prg).
+
+

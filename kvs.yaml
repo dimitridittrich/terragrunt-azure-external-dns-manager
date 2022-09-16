@@ -1,0 +1,11 @@
+# File managed by terraform. DO NOT EDIT!
+"dev":
+  "id": "/subscriptions/subscriptionid/resourceGroups/resourcegroupname/providers/Microsoft.KeyVault/vaults/kvnamedev"
+  "name": "kvnamedev"
+"prd":
+  "id": "/subscriptions/subscriptionid/resourceGroups/resourcegroupname/providers/Microsoft.KeyVault/vaults/kvnameprd"
+  "name": "kvnameprd"
+"stg":
+  "id": "/subscriptions/subscriptionid/resourceGroups/resourcegroupname/providers/Microsoft.KeyVault/vaults/kvnamestg"
+  "name": "kvnamestg"
+

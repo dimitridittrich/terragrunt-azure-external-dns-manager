@@ -1,0 +1,64 @@
+resources:
+  repositories:
+    - repository: terraform-shared
+      type: git
+      name: terraform-shared
+      ref: master
+parameters:
+  - name: TG_COMMAND
+    type: string
+    displayName: Command to run Terragrunt
+    default: apply
+  - name: VAR_GROUP
+    displayName: Azure Devops Variable group used to run pipeline
+    type: string
+    default: ""
+    values:
+      - companyname-plataforma-sharedservices-external-dns-dev
+      - companyname-plataforma-sharedservices-external-dns-stg
+      - companyname-plataforma-sharedservices-external-dns-prd
+  - name: AGENT_POOL
+    displayName: Azure Devops Agent to run pipeline
+    type: string
+    default: ""
+    values:
+      - sharedservices-prd-brs-azagent-2
+      - sharedservices-dev-scus-azagent-2
+      - sharedservices-prd-scus-azagent-1
+      - sharedservices-stg-brs-azagent-1
+      - companyname-azagent-pool-1-sharedservices-dev-scus-1-lx
+      - companyname-azagent-pool-1-sharedservices-stg-brs-1-lx
+      - companyname-azagent-pool-1-sharedservices-prd-brs-2-lx
+      - companyname-azagent-pool-1-sharedservices-prd-scus-1-lx
+  - name: TG_PATH
+    type: string
+    displayName: Path to run Terragrunt
+    default: ""
+    values:
+      - brazilsouth/prd
+      - brazilsouth/prd/companynamedevs.com.br
+      - brazilsouth/prd/companynametech.com.br
+      - brazilsouth/prd/hbsis.com.br
+      - brazilsouth/prd/mundotech.com.br
+      - brazilsouth/prd/rg
+      - southcentralus/dev
+      - southcentralus/dev/rg
+variables:
+  version.MajorMinor: "1.0"
+  version.Revision: $[counter(variables['version.MajorMinor'], 0)]
+  versionNumber: $(version.MajorMinor).$(version.Revision)
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+pr: none
+stages:
+  - template: pipeline/brewzone/products/stage.yaml@terraform-shared
+    parameters:
+      TG_PATH: ${{ parameters.TG_PATH }}
+      AGENT_POOL: ${{ parameters.AGENT_POOL }}
+      VAR_GROUP: ${{ parameters.VAR_GROUP }}
+      VERSION_NUMBER: ${{ variables.versionNumber }}
+      TG_COMMAND: ${{ parameters.TG_COMMAND }}
+      secrets: []
