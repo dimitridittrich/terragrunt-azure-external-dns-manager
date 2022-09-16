@@ -1,0 +1,11 @@
+dns_mx_records:
+  - name: "@"
+    record:
+      - exchange: "testexchange.mail.protection.outlook.com."
+        preference: 0 
+    ttl: 3600
+  - name: "testrecord-mx2"
+    record:
+      - exchange: "testrecord-mx2.mail.protection.outlook.com."
+        preference: 0 
+    ttl: 3600

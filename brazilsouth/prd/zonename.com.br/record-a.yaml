@@ -1,0 +1,10 @@
+dns_a_records:
+  - name: "@"
+    records: ["192.168.55.54"]
+    ttl: 3600
+  - name: testrecord-a2
+    records: ["172.18.55.55"]
+    ttl: 3600
+  - name: testrecord-a3
+    records: ["192.168.30.33"]
+    ttl: 3600

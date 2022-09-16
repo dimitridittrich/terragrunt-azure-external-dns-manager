@@ -1,0 +1,16 @@
+dns_txt_records:
+  - name: "@"
+    record: ["test.azurewebsites.net","testtesttestw1711c9c2md","application-test-prd.azurewebsites.net","mongodb-site-verification=testtesttestKSN3dF","testtesttestlmggwqpmk1j"]
+    ttl: 3600
+  - name: "test.9i-nonprod"
+    record: ["TESTTESTTESTEFDSAFASDFASF21C3E5CA938EBB5ABC15359601BD56C8"]
+    ttl: 3600
+  - name: "atlasdb-testtest"
+    record: ["mongodb-site-verification=testtesttest1fRTJ1PDs0wvHAC0"]
+    ttl: 60
+  - name: "sso-atlasdb"
+    record: ["mongodb-site-verification=testtesttestrGzR9XIfZ9"]
+    ttl: 60
+  - name: "www"
+    record: ["test.azurewebsites.net"]
+    ttl: 3600

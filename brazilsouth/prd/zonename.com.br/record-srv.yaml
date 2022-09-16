@@ -1,0 +1,15 @@
+dns_srv_records:
+  - name: "_siptestrecordsrv1._tcp"
+    record:
+      - priority: 0
+        weight: 0
+        port: 5061
+        target: "sip.testrecordsrv1.com.br."
+    ttl: 3600
+  - name: "_siptestrecordsrv2._tls"
+    record:
+      - priority: 0
+        weight: 0
+        port: 443
+        target: "sip.testrecordsrv2.com.br."
+    ttl: 60

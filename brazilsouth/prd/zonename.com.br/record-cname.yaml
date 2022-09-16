@@ -1,0 +1,10 @@
+dns_cname_records:
+  - name: "testrecord-cname1"
+    record: "testrecord-cname1.brazilsouth.cloudapp.azure.com"
+    ttl: 3600
+  - name: "testrecord-cname2"
+    record: "testrecord-cname3.sectigo.com."
+    ttl: 3600
+  - name: "testrecord-cname3"
+    record: "testrecord-cname3.comodoca.com."
+    ttl: 3600
